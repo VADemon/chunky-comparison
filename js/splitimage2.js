@@ -25,7 +25,8 @@ window.onload = function() {   /* alphabetize, randomize */
 
 var select = {
     file: getElId('fileSel'), scale: getElId('scaleSel'),
-    left: getElId('leftSel'), right: getElId('rightSel')
+    left: getElId('leftSel'), right: getElId('rightSel'),
+	aa: getElId('aaSel')
 };
 
 var view = {
@@ -93,6 +94,8 @@ select.file.onchange = function() {
     //select.scale.options[2].selected = true;
     setFile();
 };
+
+aaSel.onchange = processCanvasScale;
 
 select.scale.onchange = processCanvasScale;
 
@@ -163,13 +166,24 @@ function processCanvasScale(canvas, choseSide) {
 
         viewOptions.scale = '*' + getSelValue(scaleSel, 'ratio');
         prepCanvas(width, height, outCnvs);
-
-        window.pica.WW = true;
-        window.pica.resizeCanvas(inCanvas, outCnvs,
-            { quality: 2, alpha: false, unsharpAmount: 0,
-              unsharpThreshold: 0, transferable: true },
-            function() { setSize(outCnvs, side); }
-        )
+		
+		if (getSelValue(aaSel, 'value') == 'picaAA') {
+			window.pica.WW = true;
+			window.pica.resizeCanvas(inCanvas, outCnvs,
+				{ quality: 2, alpha: false, unsharpAmount: 0,
+				  unsharpThreshold: 0, transferable: true },
+				function() { setSize(outCnvs, side); }
+			);
+		} else {
+			var ctx = outCnvs.getContext("2d");
+			
+			if (getSelValue(aaSel, 'value') == 'noAA') {
+				ctx.imageSmoothingEnabled = false;
+			}
+			
+			ctx.drawImage(inCanvas, 0, 0, width, height);
+			return setSize(outCnvs, side);
+		}
     }
 }
 

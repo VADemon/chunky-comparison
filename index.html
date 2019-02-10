@@ -32,15 +32,18 @@
 			<tr>
                 <td class="title" colspan="3" style="width: 20%; text-align: center; padding-bottom: 1.25em;">
                     <select id="scaleSel" style="width:5em ;font-size: 1em;text-align:center;">
-                        <option ratio="1:3" value="0.5773502692">1/3</option>
-                        <option ratio="1:2" value="0.7071067812">1/2</option>
+                        <option ratio="1:3" value="0.333">1/3</option>
+                        <option ratio="1:2" value="0.5">1/2</option>
                         <option ratio="1:1" value="1" selected>---</option>
-                        <option ratio="2:1" value="1.414213562">2x</option>
-                        <option ratio="3:1" value="1.732050808">3x</option>
-						<option ratio="4:1" value="2">4x</option>
-						<option ratio="5:1" value="2.236067977">5x</option>
-						<option ratio="6:1" value="2.449489742">6x</option>
-						<option ratio="8:1" value="2.828427124">8x</option>
+						<option ratio="3:2" value="1.5">1.5x</option>
+                        <option ratio="2:1" value="2">2x</option>
+                        <option ratio="3:1" value="3">3x</option>
+						<option ratio="4:1" value="4">4x</option>
+                    </select>
+					<select id="aaSel" style="font-size: 1em">
+                        <option value="noAA" selected>No AA</option>
+                        <option value="browserAA">Browser AA</option>
+                        <option value="picaAA">pica AA (HQ)</option>
                     </select>
                 </td>
             </tr>
@@ -194,6 +197,9 @@
             </tr>
         </table>
     </div>
+	<div id="descEnc" class="caption" style="border-bottom: 1px solid; text-align: center; padding-bottom: 1em;">
+		Press Shift to switch between images
+	</div>
     <div id="descCli" class="caption" style="border-bottom: 1px solid; font-family: 'Courier New', Courier, monospace;">
         <p>ffmpeg -i "$file" -vf scale=1920:-1 -sws_flags bicubic ./1080p/$file</p>
         <p>ffmpeg -i "$file" -vf "crop=w:h:x:y" ./directory/$file</p>
