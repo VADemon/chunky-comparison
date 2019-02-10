@@ -4,8 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" title="default demosheet" media="screen" href="demo.css" type="text/css" />
-    <title>BPG Image Comparison</title>
-    <script async src="js/bpgdec-0.9.4.js"></script>
+    <title>Chunky render comparison</title>
     <script async src="js/pica.min.js"></script>
     <script async src="js/splitimage2.js"></script>
 </head>
@@ -17,16 +16,16 @@
             <tr>
                 <td class="title" colspan=3>
                     <select id="fileSel" style="font-size: 1.1em; margin-bottom: 1em;" multiple="multiple">
-                        <option value="1080p" selected>Full scene 1080p</option>
-                        <option value="bed">Bed crop</option>
-                        <option value="ceiling">Ceiling crop</option>
-                        <option value="glass" selected>Glass crop</option>
-                        <option value="lava">Lava crop</option>
-                        <option value="leaf">Leaf (center) crop</option>
-                        <option value="portal">Portal crop</option>
-                        <option value="reflection">Obsidian reflection crop</option>
-                        <option value="rightleaf">Leaf (right) crop</option>
-                        <option value="shoulder">Player shoulder crop</option>
+                        <option value="bed">Crop: Bed</option>
+                        <option value="ceiling">Crop: Ceiling</option>
+                        <option value="glass">Crop: Glass</option>
+                        <option value="lava">Crop: Lava</option>
+                        <option value="leaf">Crop: Leaf (center)</option>
+                        <option value="portal">Crop: Portal</option>
+                        <option value="reflection">Crop: Obsidian reflection</option>
+                        <option value="rightleaf">Crop: Leaf (right)</option>
+                        <option value="shoulder">Crop: Player shoulder</option>
+						<option value="1080p">Full scene 1080p</option>
                     </select>
                 </td>
             </tr>
@@ -108,8 +107,8 @@
                     </select>
                     <select id="leftQual" style="font-size: 1.1em;">
                         <option value="l">Large</option>
-                        <option value="m">Medium</option>
-                        <option value="s" selected>Small</option>
+                        <option value="m" selected>Medium</option>
+                        <option value="s">Small</option>
                         <option value="t">Tiny</option>
                     </select>
                 </td>
@@ -174,12 +173,12 @@
 						<option value="png" fname="13500">13500 SPP</option>
 						<option value="png" fname="13750">13750 SPP</option>
 						<option value="png" fname="14000">14000 SPP</option>
-						<option value="png" fname="14000-FINAL">14000 SPP (FINAL)</option>
+						<option value="png" fname="14000-FINAL" selected>14000 SPP (FINAL)</option>
                     </select>
                     <select id="rightQual" style="font-size: 1.1em;">
                         <option value="l">Large</option>
-                        <option value="m">Medium</option>
-                        <option value="s" selected>Small</option>
+                        <option value="m" selected>Medium</option>
+                        <option value="s">Small</option>
                         <option value="t">Tiny</option>
                     </select>
                 </td>
@@ -210,7 +209,7 @@
     </div>
     <div id="descEnc" class="caption">
 		<p>Render options should go here</p>
-        <p>This page is based on <a href="https://xooyoozoo.github.io/yolo-octo-bugfixes/">BPG comparison by xooyoozoo</a> which was originally based on <a href="http://people.xiph.org/~xiphmont/demo/daala/update1-tool2b.shtml" target="_blank">Xiph.org's</a> Daala comparison page.</p>
+        <p>This page is based on a butchered <a href="https://xooyoozoo.github.io/yolo-octo-bugfixes/">BPG comparison by xooyoozoo</a> which was originally based on <a href="http://people.xiph.org/~xiphmont/demo/daala/update1-tool2b.shtml" target="_blank">Xiph.org's</a> Daala comparison page.</p>
         <p style="text-align: center;"><br><a href="http://bellard.org/bpg/" target="_blank" style="text-decoration: none"><b>BPG Image Format</b></a></p>
     </div>
 </body>
