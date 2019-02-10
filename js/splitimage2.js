@@ -1,4 +1,4 @@
-(function() {   /* alphabetize, randomize */
+window.onload = function() {   /* alphabetize, randomize */
     var file = document.getElementById('fileSel');
     var fileTexts = new Array();
     var selCandidates = new Array()
@@ -21,7 +21,7 @@
     }
     file.multiple = false;
     selCandidates[Math.floor(Math.random() * selCandidates.length)].selected = true;
-})();
+};
 
 var select = {
     file: getElId('fileSel'), scale: getElId('scaleSel'),
