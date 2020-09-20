@@ -1,4 +1,6 @@
-https://VADemon.github.io/yolo-octo-bugfixes/
+View: https://vademon.github.io/chunky-comparison/
+
+Code repository for a page comparing a Chunky image render at various stages up to 14000 SPP (samples per pixel).
 
 Chunky render comparison
 ==================
